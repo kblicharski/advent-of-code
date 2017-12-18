@@ -2,17 +2,12 @@ captcha = "951484596541141557316984781494999179679767747627132447513171626424561
 
 def solve(captcha):
     prev = captcha[0] 
-    count = 0
     total = 0
     for n in captcha[1:]+captcha[0]:
         if prev == n:
-            count += int(n) 
+            total += int(n) 
         else:
-            total += count
             prev = n
-            count = 0
-    if count != 0:
-        return count + total
     return total
 
 assert solve("1122") == 3
